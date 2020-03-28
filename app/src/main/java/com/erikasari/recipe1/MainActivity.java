@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -49,11 +50,6 @@ public class MainActivity extends AppCompatActivity {
         dataAdapter = new DataAdapter(dataModelArrayList, this);
         recyclerView.setAdapter(dataAdapter);
 
-        /*//menambahakan header
-        DataModel headerModel = new DataModel();
-        headerModel.setViewType(2);
-        dataModelArrayList.add(0, headerModel);*/
-
         //menambahkan footer
         DataModel footerModel = new DataModel();
         footerModel.setViewType(2);
@@ -89,4 +85,5 @@ public class MainActivity extends AppCompatActivity {
         }
         win.setAttributes(winParams);
     }
+
 }

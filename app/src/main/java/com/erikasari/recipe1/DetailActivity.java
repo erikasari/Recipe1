@@ -12,7 +12,11 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.erikasari.recipe1.DataModel;
+import com.erikasari.recipe1.R;
+
 public class DetailActivity extends AppCompatActivity {
+
     WebView webView;
     private ProgressBar mProgressBar;
 
@@ -20,9 +24,6 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
-        //Toolbar
-        setupToolbar();
 
         mProgressBar = findViewById(R.id.progress_bar);
         mProgressBar.setMax(100);
@@ -49,13 +50,16 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onPageStarted(WebView view, String urlStart, Bitmap favicon) {
                 mProgressBar.setVisibility(View.VISIBLE);
+
             }
 
             @Override
             public void onPageFinished(WebView view, String urlPage) {
                 mProgressBar.setVisibility(View.GONE);
+
             }
         });
+
     }
 
     private void setupToolbar() {
